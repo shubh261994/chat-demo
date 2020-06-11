@@ -12,10 +12,10 @@ export default class Header extends Component {
     render() {
         return (
             <header className="header">
-            	<img src={back} onClick={this.onBackClick} />
+            	<img alt="" src={back} onClick={this.onBackClick} />
                 <h1 className="header-title">Agent Vinod</h1>
-                <img src={call} className="header-action" />
-                <img src={video} className="header-action" />
+                <img alt="" src={call} className="header-action" />
+                <img alt="" src={video} className="header-action" />
             </header>
         );
     }

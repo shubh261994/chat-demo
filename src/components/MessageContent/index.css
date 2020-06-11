@@ -1,0 +1,50 @@
+.message {
+    padding: 8px 12px;
+    box-shadow: 0px 1px 2px #0000001A;
+    display: block;
+    margin: 4px 8px;
+    width: 72%;
+    border-radius: 8px;
+    position: relative;
+}
+
+.sent-msg {
+    color: #fff;
+    background: #56A4F6;
+    float: right;
+    border-top-right-radius: 0;
+    margin-right: 16px;
+}
+
+.sent-msg:after {
+    content: "";
+    position: absolute;
+    margin-top: -12px;
+    margin-left: 0px;
+    border-left: 10.5px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #56A4F6;
+    transform: rotate(-45deg);
+    right: -8px;
+    top: 10px;
+}
+
+.received-msg {
+    float: left;
+    background: #EFEFEF;
+    border-top-left-radius: 0;
+    margin-left: 16px;
+}
+
+.received-msg:before {
+    content: "";
+    position: absolute;
+    margin-top: -12px;
+    margin-left: 0px;
+    border-left: 10.5px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #EFEFEF;
+    transform: rotate(45deg);
+    left: -8px;
+    top: 10px;
+}

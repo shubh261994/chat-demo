@@ -28,14 +28,23 @@ export class Chat extends Component {
                 <Header />
                 <ChatMessages />
                 <div className="msg-send-holder">
-                    <div className="msg-input-holder">
-                        <input className="msg-input" onChange={this.onMessageChange} />
-                        <img src={attach} />
-                    </div>
-                    <button className="send-btn" onClick={this.onSendClick}>
-                        <img src={send} />
+            <div className="msg-input-holder">
+                <form className="rcw-sender" onSubmit={()=>{}}>
+                    <input
+                      type="text"
+                      className="rcw-new-message"
+                      name="message"
+                      placeholder={'ded'}
+                      autoComplete="off"
+                      onChange={this.onMessageChange}
+                    />
+                    <img alt="" src={attach} />
+                    <button type="submit" className="rcw-send">
+                        <img src={send} className="rcw-send-icon" alt="" />
                     </button>
-                </div>
+                </form>
+            </div>
+        </div>
             </div>
         );
     }

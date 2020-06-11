@@ -1,3 +1,100 @@
+
+/*======================= CSS RESET ==========================*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    background: #f4f4f7;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: left;
+    position: relative;
+    background-color: #f8f8fb;
+    font-family: "Poppins",sans-serif;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+@media (max-width: 800px) {
+    body {
+        padding: 0;
+    }
+
+    .hide-mb {
+        display: none !important;
+    }
+}
+
+@media (min-width: 800px) {
+    .show-mb {
+        display: none !important;
+    }
+}
+
+@media (max-width: 800px) {
+    .show-mb {
+        display: default !important;
+    }
+}
+
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+[placeholder]{
+    text-overflow:ellipsis;
+}
+
+/*===================CSS STARTS HERE=========================*/
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
 body {
     color: #333333;
 }
@@ -5,12 +102,16 @@ body {
 .chat-holder {
     width: 100%;
     height: 100vh;
+    padding-top: 60px;
     padding-bottom: 44px;
 }
 
 .chat-holder .header {
-    width: 95%;
-    height: 30px;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    width: 100%;
+    height: 60px;
     padding: 18px 16px;
     border-bottom: 1px solid #D7D7D7;
     z-index: 10;
@@ -25,7 +126,7 @@ body {
 
 .header .header-action {
     float: right;
-    margin-top: 14px;
+    margin-top: 4px;
     margin-left: 20px;
     margin-right: 8px;
 }
@@ -54,72 +155,13 @@ body {
     padding-top: 40px;
 }
 
-.chat-msgs-holder .message {
-    padding: 8px 12px;
-    box-shadow: 0px 1px 2px #0000001A;
-    display: block;
-    margin: 4px 8px;
-    width: 72%;
-    border-radius: 8px;
-    position: relative;
+.message-holder {
+    display: flex;
+    align-items: center;
 }
 
-.chat-msgs-holder .sent-msg {
-    color: #fff;
-    background: #56A4F6;
-    float: right;
-    border-top-right-radius: 0;
-    margin-right: 16px;
-}
-
-.chat-msgs-holder .sent-msg:after {
-    content: "";
-    position: absolute;
-    margin-top: -12px;
-    margin-left: 0px;
-    border-left: 10.5px solid transparent;
-    border-right: 12px solid transparent;
-    border-bottom: 12px solid #56A4F6;
-    transform: rotate(-45deg);
-    right: -8px;
-    top: 10px;
-}
-
-.chat-msgs-holder .received-msg {
-    float: left;
-    background: #EFEFEF;
-    border-top-left-radius: 0;
-    margin-left: 16px;
-}
-
-.chat-msgs-holder .received-msg:before {
-    content: "";
-    position: absolute;
-    margin-top: -12px;
-    margin-left: 0px;
-    border-left: 10.5px solid transparent;
-    border-right: 12px solid transparent;
-    border-bottom: 12px solid #EFEFEF;
-    transform: rotate(45deg);
-    left: -8px;
-    top: 10px;
-}
-
-.message .message-time {
-    font-size: 9px;
-    color: #4D4D4D;
-    position: absolute;
-    top: 50%;
-}
-
-.sent-msg .message-time {
-    left: -8px;
-    transform: translate(-100%, -50%);
-}
-
-.received-msg .message-time {
-    right: -8px;
-    transform: translate(100%, -50%);
+.sent-message-holder {
+    flex-direction: row-reverse;
 }
 
 .chat-holder .msg-send-holder {
@@ -127,7 +169,7 @@ body {
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 95%;
+    width: 100%;
     padding: 4px 8px;
     display: flex;
     z-index: 10;
@@ -145,13 +187,13 @@ body {
     padding: 10px 12px;
     padding-right: 34px;
     border-radius: 16px;
-    width: 85%;
+    width: 100%;
 }
 
 .msg-input-holder img {
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 8px;
+    right: 12px;
     height: 16px;
 }
 
@@ -163,4 +205,14 @@ body {
     margin-left: 4px;
     background: #56A4F6;
     box-shadow: 0px 2px 4px #00000033;
+}
+
+@media(min-width: 800px) {
+    .msg-input-holder img {
+        display: none;
+    }
+
+    .msg-send-holder .send-btn {
+        margin-left: 16px;
+    }
 }
